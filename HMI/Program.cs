@@ -16,7 +16,7 @@ namespace HMI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Control1());
+            Application.Run(new Control3());
             // new Nombre del formulario que se ejecutara
         }
     }

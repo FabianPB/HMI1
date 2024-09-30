@@ -16,5 +16,64 @@ namespace HMI
         {
             InitializeComponent();
         }
+
+        private void serialPort1_DataReceived(object sender, System.IO.Ports.SerialDataReceivedEventArgs e)
+        {
+            while (serialPort1.IsOpen && serialPort1.BytesToRead > 0)
+            {
+                string serialData = serialPort1.ReadLine();
+
+                int value = Convert.ToInt32(serialData);
+
+                if (value >= CircularProgressBar1.Minimum &&
+                    value <= CircularProgressBar1.Maximum)
+                {
+                    CircularProgressBar1.Invoke((MethodInvoker)(() =>
+                    {
+                        CircularProgressBar1.Text = serialData;
+                        CircularProgressBar1.Value = value;
+                    }));
+                }
+                chart1.Invoke((MethodInvoker)(() => chart1.Series
+                ["Analog"].Points.Add(value)));
+            }
+
+        }
+
+        private void Control3_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Control3_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (serialPort1.IsOpen)
+            {
+                serialPort1.Close();
+            }
+
+        }
+
+        private void btnConectar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                serialPort1.Open();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnConectar_MouseEnter(object sender, EventArgs e)
+        {
+            btnConectar.BackColor = Color.Gray;
+        }
+
+        private void btnConectar_MouseLeave(object sender, EventArgs e)
+        {
+            btnConectar.BackColor = Color.DodgerBlue;
+        }
     }
 }

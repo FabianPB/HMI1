@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CircularProgressBar;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -68,12 +69,12 @@ namespace HMI
 
         private void btnConectar_MouseEnter(object sender, EventArgs e)
         {
-            btnConectar.BackColor = Color.Gray;
+            BtnConectar.BackColor = Color.Gray;
         }
 
         private void btnConectar_MouseLeave(object sender, EventArgs e)
         {
-            btnConectar.BackColor = Color.DodgerBlue;
+            BtnConectar.BackColor = Color.DodgerBlue;
         }
     }
 }

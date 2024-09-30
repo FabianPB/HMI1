@@ -1,6 +1,6 @@
 ﻿namespace HMI
 {
-    partial class Control3
+    partial class ControFinalV1
     {
         /// <summary>
         /// Required designer variable.
@@ -28,26 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // Control3
-            // 
-            this.ClientSize = new System.Drawing.Size(526, 402);
-            this.Name = "Control3";
-            this.ResumeLayout(false);
-
+            this.components = new System.ComponentModel.Container();
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Text = "ControFinalV1";
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button BtnConectar;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
-<<<<<<< HEAD
-        private CircularProgressBar.CircularProgressBar CircularProgressBar1;
-=======
->>>>>>> 9ae13d9be6a0754d4c551fd60a569ffe02183b1a
-        private System.IO.Ports.SerialPort serialPort1;
     }
 }
